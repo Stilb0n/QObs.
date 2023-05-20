@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>210</y>
+      <x>170</x>
+      <y>250</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -26,6 +26,42 @@
     <property name="text">
      <string>OpenFile</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>120</y>
+      <width>191</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Введите путь файла:</string>
+    </property>
+    <widget class="QLineEdit" name="path">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Открыть файл</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

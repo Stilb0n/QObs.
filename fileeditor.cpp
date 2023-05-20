@@ -4,6 +4,7 @@
 #include "IFileEditor.cpp"
 #include <list>
 #include <QLabel>
+#include <QString>
 using namespace std;
 class FileEditor : public IFileEditor
 {
@@ -16,9 +17,9 @@ FileEditor()
 {
     existing = 0;
 }
- FileEditor(const char* path)
+FileEditor(const string& path)
 {
-     file.open(path);
+    file.open(path);
      if (file.fail())
      existing = 0;
      else
@@ -29,6 +30,19 @@ FileEditor()
      }
      file.seekg(0, ios::beg);
 }
+
+FileEditor (const FileEditor& other)
+{
+    this->existing=other.existing;
+  //  other.path
+    this->size=other.size;
+    this->edited=other.edited;
+    this->message_=other.message_;
+    this->list_observer_=other.list_observer_;
+}
+
+
+
  void OpenFile(const char* path) {
      if (existing)
      file.close();

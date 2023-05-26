@@ -19,6 +19,7 @@ FileEditor()
 }
 FileEditor(const string& path)
 {
+    QLabel* label = new QLabel("мы работаем ё");label->show();
     file.open(path);
      if (file.fail())
      existing = 0;
@@ -26,7 +27,7 @@ FileEditor(const string& path)
      {
          file.seekg(0, ios::end);
          size = file.tellg();
-         // cout << size;
+         // cout << "мы работае";
      }
      file.seekg(0, ios::beg);
 }

@@ -65,16 +65,17 @@ FileEditor (const FileEditor& other)
      file.close();
  }
 
- void Write(string data) {
+QString Write(QString data) {
      if (existing)
      {
-         file << data;
+         file << data.toStdString();
          edited = 1;
          file.seekg(0, ios::end);
          size = file.tellg();
         // cout << size;
      }
      Notify();
+     return data;
  }
  void Attach(IObserver* observer) override {
      list_observer_.push_back(observer);

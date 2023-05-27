@@ -14,26 +14,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>250</y>
-      <width>141</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>OpenFile</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>150</x>
       <y>120</y>
       <width>191</width>
-      <height>80</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="title">
@@ -52,14 +39,27 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>0</x>
        <y>50</y>
-       <width>111</width>
+       <width>191</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
-      <string>Открыть файл</string>
+      <string>Проверка на сущестование</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>161</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Добавить в файл букву А</string>
      </property>
     </widget>
    </widget>
@@ -70,7 +70,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

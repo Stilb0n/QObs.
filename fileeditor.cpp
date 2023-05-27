@@ -19,7 +19,7 @@ FileEditor()
 }
 FileEditor(const string& path)
 {
-    QLabel* label = new QLabel("мы работаем ё");label->show();
+
     file.open(path);
      if (file.fail())
      existing = 0;
@@ -27,7 +27,7 @@ FileEditor(const string& path)
      {
          file.seekg(0, ios::end);
          size = file.tellg();
-         // cout << "мы работае";
+
      }
      file.seekg(0, ios::beg);
 }
@@ -65,17 +65,18 @@ FileEditor (const FileEditor& other)
      file.close();
  }
 
-QString Write(QString data) {
+void Write(string data) {
      if (existing)
      {
-         file << data.toStdString();
+      file.seekg(0, ios::end);
+         file << data;
          edited = 1;
-         file.seekg(0, ios::end);
+
          size = file.tellg();
         // cout << size;
      }
      Notify();
-     return data;
+
  }
  void Attach(IObserver* observer) override {
      list_observer_.push_back(observer);
@@ -137,6 +138,7 @@ private:
 int FileSize = 0;
 bool FileExisting = 0;
 public:
+QString FEd;
 void Update(int size, bool existing )override {
     int oldsize = FileSize;
     FileSize = size;
@@ -149,8 +151,8 @@ void EditCheck(int oldsize)
     {
 
         cout << "файл изменен\t"<< "Размер: " << FileSize<< endl;
+            FEd = "файл изменен";
     }
-//	cout << "конец функции EditCheck \n";
 }
 };
 
@@ -159,11 +161,15 @@ class ExsistingChecker : public IObserver {
 private:
 bool FileExisting = 0;
 int FileSize = 0;
+
 public:
+ QString FEx;
+
 void Update(int size, bool existing)override {
     FileExisting = existing;
     FileSize = size;
     ExistingCheck();
+
 }
 void ExistingCheck()
 {
@@ -171,9 +177,12 @@ void ExistingCheck()
     {
         cout << "файл существует!\n";
 
+        FEx = "файл существует";
+
     }
-    if (!FileExisting) { QLabel* label = new QLabel("Файл не сущетсвует");label->show(); cout << "файл не существует\n"; }
-//	cout << "конец функции ExistingCheck \n";
+    if (!FileExisting) {  cout << "файл не существует\n";   FEx = "файл не существует"; }
+
+
 }
 
 

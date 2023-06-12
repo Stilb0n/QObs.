@@ -90,7 +90,7 @@ void Write(string data) {
 
      while (iterator != list_observer_.end()) {
          (*iterator)->Update(size, existing);
-         // зачем разыменовываю?
+
          ++iterator;
      }
  }
@@ -128,7 +128,6 @@ void EmptyCheck()
 {
     if (FileSize >0)
         cout << "файл не пустой\n";
-//	cout << "конец функции EmptyCheck \n";
 }
 };
 
@@ -151,7 +150,7 @@ void EditCheck(int oldsize)
     {
 
         cout << "файл изменен\t"<< "Размер: " << FileSize<< endl;
-            FEd = "файл изменен";
+            FEd = "файл изменен." ;
     }
 }
 };
@@ -162,8 +161,10 @@ private:
 bool FileExisting = 0;
 int FileSize = 0;
 
+
 public:
  QString FEx;
+
 
 void Update(int size, bool existing)override {
     FileExisting = existing;
@@ -177,7 +178,7 @@ void ExistingCheck()
     {
         cout << "файл существует!\n";
 
-        FEx = "файл существует";
+            FEx = "файл существует. Его размер: " + QString::number(FileSize)  ;
 
     }
     if (!FileExisting) {  cout << "файл не существует\n";   FEx = "файл не существует"; }

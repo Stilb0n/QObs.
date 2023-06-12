@@ -19,16 +19,13 @@ SOURCES += \
     IFileEditor.cpp \
     fileeditor.cpp \
     main.cpp \
-    mainwindow.cpp \
-    pathwindow.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h \
-    pathwindow.h
+    mainwindow.h
 
 FORMS += \
-    mainwindow.ui \
-    pathwindow.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

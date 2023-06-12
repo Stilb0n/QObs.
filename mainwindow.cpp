@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "pathwindow.h"
 #include "fileeditor.cpp"
 #include <QString>
 #include <QMessageBox>
@@ -10,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -30,11 +28,11 @@ void MainWindow::on_pushButton_clicked()
     obj1.Attach(&z1);
     obj1.Attach(&x);
     obj1.Attach(&y);
-    obj1.Write("изменение");
+    obj1.Write("A");
         OUT = x.FEx;
     EDIT = z1.FEd;
     OUT = OUT + " " + EDIT;
-    QMessageBox::information(this,"Проверка на существование",OUT);
+    QMessageBox::information(this,"Редактирование",OUT);
 
 }
 
@@ -50,7 +48,7 @@ void MainWindow::on_pushButton_2_clicked()
     obj1.Attach(&z1);
     obj1.Attach(&x);
     obj1.Attach(&y);
-
+    obj1.Write("");
     OUT = x.FEx;
     QMessageBox::information(this,"Проверка на существование",OUT);
     /*PathWindow path_window;

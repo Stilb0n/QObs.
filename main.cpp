@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
     //	obj.OpenFile("C:\\101\\infile.txt");
 
         obj.Write("faaaf");
-//QLabel* label2 = new QLabel("Файл не сущетсвует");
-//label2->show();
+
+
   return a.exec();
         //"C:\\101\\infile.txt"
 }
